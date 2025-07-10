@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: "inter";
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/font/Inter-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+}
+
+::-webkit-scrollbar{
+    width: 14px;
+}
+::-webkit-scrollbar-thumb{
+    background: #2A3647 ;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+:root {
+  /* Font Sizes (Numeric Scale) */
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-32: 32px;
+  --font-size-16-20: clamp(16px, 1vw, 20px);
+  --font-size-16-21: clamp(16px, 1.5vw, 21px);
+  --font-size-heading: clamp(28px, 4vw, 48px); /* h1 */
+
+  /* Font Weights */
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+
+  /* Colors */
+  --primary-color-gray: #2a2a2a;
+  --primary-color-dark-gray: #091931;
+  --blue: #007bff;
+  --light-blue: #29abe2;
+  --red: #ff4d4f;
+  --light-gray-bg: #f4f4f4;
+  --gray-a-links: #6b6b6b;
+
+  /* Borders & Radius */
+  --border-radius: 12px;
+  --border-radius-buttons: 8px;
+  --border-radius-input-fields: 8px;
+  --border-buttons-gray: 1px solid #ccc;
+  --border-buttons-blue: 1px solid var(--blue);
+  --border-input-fields: 1px solid #ccc;
+
+  /* Shadows */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --box-shadow-button: 0 4px 10px rgba(0, 123, 255, 0.3);
+
+  /* Transitions & Effects */
+  --transition-hover-effect: all 0.2s ease-in-out;
+  --scale-hover: 1.05;
+
+  /* Layout Gaps */
+  --button-gap: 12px;
+  --form-gap: 24px;
+
+  /* Widths */
+  --width-64-100: clamp(64px, 6vw, 100px);
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*padding: 0 40px 0 348px;*/
+    padding: 0 0 0 348px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Inter";
+    color: #2a3647;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body.overlay-active header {
+    display: none !important;
+  }
+}
+
+nav.sidebar {
+    background-color: #2a3647;
+    position: fixed;
+    top: 0;
+    font-size: 16px;
+    font-weight: 200;
+    height: 100vh;
+    width: 232px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Optional: Hide sidebar on mobile */
+@media (max-width: 768px) {
+  nav.sidebar {
+    display: none;
+  }
+
+  header {
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (min-width: 769px) {
+  header {
+    padding-left: 348px;
+  }
+}
+
+.logonav {
+    padding: 65px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 200px;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2a3647;
+    border: none;
+    padding: 10px 65px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: #2a3d59;
+}
+
+.menu-button.active {
+    background-color: #091931;
+}
+
+.menu-button.active img {
+    filter: brightness(0) invert(1);
+}
+
+.menu-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-button span {
+    font-family: "Inter";
+    font-weight: 200;
+    font-size: 16px;
+    color: #cdcdcd;
+}
+
+.menu-login {
+    padding-bottom: 400px;
+}
+
+.menu-button-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2a3647;
+    border: none;
+    padding: 10px 79px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu-button-login span {
+    font-family: "Inter";
+    font-weight: 200;
+    font-size: 16px;
+    color: #cdcdcd;
+}
+
+.menu-button-login:hover {
+    background-color: #2a3d59;
+}
+
+.legal-policy {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.legal-policy-background {
+    width: 100%;
+    background-color: #2a3647;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+.legal-policy-background.active {
+    background-color: #091931;
+}
+
+.legal-policy-button {
+    border: none;
+    background: none;
+    font-family: "Inter";
+    color: #cdcdcd;
+    font-size: 16px;
+    font-weight: 200;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.legal-policy-button:hover {
+    color: #29abe2;
+    transform: scale(1.05);
+}
+
+
+/* === Responsive fixes for mobile view === */
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  header {
+    padding: 20px;
+    z-index: 1;
+  }
+
+  .logonav {
+    padding: 20px;
+  }
+
+  .menu-button {
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  header {
+    padding-left: 348px;
+  }
+}
+
+body {
+    overflow-x: hidden;
+}    
+
