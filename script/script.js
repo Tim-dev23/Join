@@ -66,7 +66,7 @@ function setUserInitials() {
  */
 function logOut() {
   sessionStorage.clear(); 
-  window.location.href = 'login.html';
+  window.location.href = 'index.html';
 }
 
 
